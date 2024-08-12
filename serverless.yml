@@ -1,33 +1,41 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: organizationl
+
 # "app" enables Serverless Framework Dashboard features and sharing them with other Services.
 app: restapitest
+
 # "service" is the name of this project. This will also be added to your AWS resource names.
 service: RestAPITest
 
+# Define stages and parameters used across the configuration.
 stages:
   default:
     params:
       tableName: "users-table-${sls:stage}"
 
+# Plugins used in this project.
 plugins:
-  - serverless-wsgi
-  - serverless-python-requirements
+  - serverless-wsgi       # Plugin to handle WSGI applications like Flask
+  - serverless-python-requirements  # Plugin to package Python dependencies
 
+# Custom variables used throughout the configuration.
 custom:
   wsgi:
-    app: app.app
-  tableName: "UsersTable"
+    app: app.app  # Entry point of the Flask app
+  tableName: "UsersTable"  # Name of the DynamoDB table
 
+# Provider configuration for AWS.
 provider:
-  name: aws
-  runtime: python3.12
-  region: us-east-1
+  name: aws  # The cloud provider, AWS in this case
+  runtime: python3.12  # The Python runtime version
+  region: us-east-1  # AWS region where the resources will be deployed
+
+  # IAM role permissions for the Lambda functions.
   iam:
     role:
       statements:
         - Effect: Allow
-          Action:
+          Action:  # DynamoDB actions allowed for the Lambda functions
             - dynamodb:Query
             - dynamodb:Scan
             - dynamodb:GetItem
@@ -35,45 +43,51 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
           Resource:
-            - arn:aws:dynamodb:${self:provider.region}:*:table/UsersTable
-  environment:
-    USERS_TABLE: ${self:custom.tableName}
+            - arn:aws:dynamodb:${self:provider.region}:*:table/UsersTable  # Resource ARN for the DynamoDB table
 
+  # Environment variables for Lambda functions.
+  environment:
+    USERS_TABLE: ${self:custom.tableName}  # Environment variable for the DynamoDB table name
+
+# Functions to be deployed as AWS Lambda.
 functions:
   api:
-    handler: wsgi_handler.handler
+    handler: wsgi_handler.handler  # Handler for the Flask app
     events:
       - http:
-          path: /
-          method: ANY
+          path: /   # API Gateway event for the root path
+          method: ANY  # Allow any HTTP method
       - http:
-          path: /{proxy+}
-          method: ANY
-  createUser:
-    handler: handler.createUser
+          path: /{proxy+}  # API Gateway event for any subpath
+          method: ANY  # Allow any HTTP method
+
+  create_user:
+    handler: handler.create_user  # Handler for creating a user in DynamoDB
     events:
       - http:
-          path: user
-          method: post
-  getUserById:
-    handler: handler.getUserById
+          path: user  # API Gateway event for creating a user
+          method: post  # POST method for this endpoint
+
+  get_user_by_id:
+    handler: handler.get_user_by_id  # Handler for retrieving a user by ID from DynamoDB
     events:
       - http:
-          path: user/{id}
-          method: get
+          path: user/{id}  # API Gateway event for retrieving a user by ID
+          method: get  # GET method for this endpoint
+
+# Resources to be created, including the DynamoDB table.
 resources:
   Resources:
     UsersTable:
-      Type: AWS::DynamoDB::Table
+      Type: AWS::DynamoDB::Table  # AWS resource type
       Properties:
-        TableName: ${self:custom.tableName}
+        TableName: ${self:custom.tableName}  # Name of the DynamoDB table
         AttributeDefinitions:
-          - AttributeName: id
-            AttributeType: S
+          - AttributeName: id  # Attribute for the primary key
+            AttributeType: S  # String type for the primary key
         KeySchema:
-          - AttributeName: id
-            KeyType: HASH
+          - AttributeName: id  # Primary key schema
+            KeyType: HASH  # Hash key (partition key) type
         ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-
+          ReadCapacityUnits: 1  # Read capacity for the table
+          WriteCapacityUnits: 1  # Write capacity for the table

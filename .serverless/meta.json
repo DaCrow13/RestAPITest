@@ -1,7 +1,7 @@
 {
   "C:\\Users\\Utente\\Documents\\OmniNext\\RestAPITest": {
     "versionSfCore": null,
-    "versionFramework": "4.1.20",
+    "versionFramework": "4.1.21",
     "isWithinCompose": false,
     "isCompose": false,
     "composeOrgName": null,
@@ -136,16 +136,16 @@
                       "LogGroupName": "/aws/lambda/RestAPITest-dev-api"
                     }
                   },
-                  "CreateUserLogGroup": {
+                  "CreateUnderscoreuserLogGroup": {
                     "Type": "AWS::Logs::LogGroup",
                     "Properties": {
-                      "LogGroupName": "/aws/lambda/RestAPITest-dev-createUser"
+                      "LogGroupName": "/aws/lambda/RestAPITest-dev-create_user"
                     }
                   },
-                  "GetUserByIdLogGroup": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup": {
                     "Type": "AWS::Logs::LogGroup",
                     "Properties": {
-                      "LogGroupName": "/aws/lambda/RestAPITest-dev-getUserById"
+                      "LogGroupName": "/aws/lambda/RestAPITest-dev-get_user_by_id"
                     }
                   },
                   "IamRoleLambdaExecution": {
@@ -245,7 +245,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
                       "Handler": "wsgi_handler.handler",
                       "Runtime": "python3.12",
@@ -268,18 +268,18 @@
                       "ApiLogGroup"
                     ]
                   },
-                  "CreateUserLambdaFunction": {
+                  "CreateUnderscoreuserLambdaFunction": {
                     "Type": "AWS::Lambda::Function",
                     "Properties": {
                       "Code": {
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
-                      "Handler": "handler.createUser",
+                      "Handler": "handler.create_user",
                       "Runtime": "python3.12",
-                      "FunctionName": "RestAPITest-dev-createUser",
+                      "FunctionName": "RestAPITest-dev-create_user",
                       "MemorySize": 1024,
                       "Timeout": 6,
                       "Environment": {
@@ -295,21 +295,21 @@
                       }
                     },
                     "DependsOn": [
-                      "CreateUserLogGroup"
+                      "CreateUnderscoreuserLogGroup"
                     ]
                   },
-                  "GetUserByIdLambdaFunction": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction": {
                     "Type": "AWS::Lambda::Function",
                     "Properties": {
                       "Code": {
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
-                      "Handler": "handler.getUserById",
+                      "Handler": "handler.get_user_by_id",
                       "Runtime": "python3.12",
-                      "FunctionName": "RestAPITest-dev-getUserById",
+                      "FunctionName": "RestAPITest-dev-get_user_by_id",
                       "MemorySize": 1024,
                       "Timeout": 6,
                       "Environment": {
@@ -325,37 +325,37 @@
                       }
                     },
                     "DependsOn": [
-                      "GetUserByIdLogGroup"
+                      "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup"
                     ]
                   },
-                  "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ": {
+                  "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "ApiLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
-                  "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0": {
+                  "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
-                        "Ref": "CreateUserLambdaFunction"
+                        "Ref": "CreateUnderscoreuserLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
-                  "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
-                        "Ref": "GetUserByIdLambdaFunction"
+                        "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -538,7 +538,7 @@
                               ":lambda:path/2015-03-31/functions/",
                               {
                                 "Fn::GetAtt": [
-                                  "CreateUserLambdaFunction",
+                                  "CreateUnderscoreuserLambdaFunction",
                                   "Arn"
                                 ]
                               },
@@ -550,7 +550,7 @@
                       "MethodResponses": []
                     },
                     "DependsOn": [
-                      "CreateUserLambdaPermissionApiGateway"
+                      "CreateUnderscoreuserLambdaPermissionApiGateway"
                     ]
                   },
                   "ApiGatewayMethodUserIdVarGet": {
@@ -584,7 +584,7 @@
                               ":lambda:path/2015-03-31/functions/",
                               {
                                 "Fn::GetAtt": [
-                                  "GetUserByIdLambdaFunction",
+                                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                                   "Arn"
                                 ]
                               },
@@ -596,10 +596,10 @@
                       "MethodResponses": []
                     },
                     "DependsOn": [
-                      "GetUserByIdLambdaPermissionApiGateway"
+                      "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1723201986679": {
+                  "ApiGatewayDeployment1723458008593": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -651,12 +651,12 @@
                       }
                     }
                   },
-                  "CreateUserLambdaPermissionApiGateway": {
+                  "CreateUnderscoreuserLambdaPermissionApiGateway": {
                     "Type": "AWS::Lambda::Permission",
                     "Properties": {
                       "FunctionName": {
                         "Fn::GetAtt": [
-                          "CreateUserLambdaFunction",
+                          "CreateUnderscoreuserLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -688,12 +688,12 @@
                       }
                     }
                   },
-                  "GetUserByIdLambdaPermissionApiGateway": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway": {
                     "Type": "AWS::Lambda::Permission",
                     "Properties": {
                       "FunctionName": {
                         "Fn::GetAtt": [
-                          "GetUserByIdLambdaFunction",
+                          "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -760,28 +760,28 @@
                   "ApiLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                      "Ref": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
                     },
                     "Export": {
                       "Name": "sls-RestAPITest-dev-ApiLambdaFunctionQualifiedArn"
                     }
                   },
-                  "CreateUserLambdaFunctionQualifiedArn": {
+                  "CreateUnderscoreuserLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                      "Ref": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
                     },
                     "Export": {
-                      "Name": "sls-RestAPITest-dev-CreateUserLambdaFunctionQualifiedArn"
+                      "Name": "sls-RestAPITest-dev-CreateUnderscoreuserLambdaFunctionQualifiedArn"
                     }
                   },
-                  "GetUserByIdLambdaFunctionQualifiedArn": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                      "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
                     },
                     "Export": {
-                      "Name": "sls-RestAPITest-dev-GetUserByIdLambdaFunctionQualifiedArn"
+                      "Name": "sls-RestAPITest-dev-GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn"
                     }
                   },
                   "ServiceEndpoint": {
@@ -921,10 +921,10 @@
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                "versionLogicalId": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
               },
-              "createUser": {
-                "handler": "handler.createUser",
+              "create_user": {
+                "handler": "handler.create_user",
                 "events": [
                   {
                     "http": {
@@ -934,16 +934,16 @@
                     }
                   }
                 ],
-                "name": "RestAPITest-dev-createUser",
+                "name": "RestAPITest-dev-create_user",
                 "package": {},
                 "memory": 1024,
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                "versionLogicalId": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
               },
-              "getUserById": {
-                "handler": "handler.getUserById",
+              "get_user_by_id": {
+                "handler": "handler.get_user_by_id",
                 "events": [
                   {
                     "http": {
@@ -953,13 +953,13 @@
                     }
                   }
                 ],
-                "name": "RestAPITest-dev-getUserById",
+                "name": "RestAPITest-dev-get_user_by_id",
                 "package": {},
                 "memory": 1024,
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                "versionLogicalId": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
               }
             },
             "resources": {
@@ -1139,16 +1139,16 @@
                       "LogGroupName": "/aws/lambda/RestAPITest-dev-api"
                     }
                   },
-                  "CreateUserLogGroup": {
+                  "CreateUnderscoreuserLogGroup": {
                     "Type": "AWS::Logs::LogGroup",
                     "Properties": {
-                      "LogGroupName": "/aws/lambda/RestAPITest-dev-createUser"
+                      "LogGroupName": "/aws/lambda/RestAPITest-dev-create_user"
                     }
                   },
-                  "GetUserByIdLogGroup": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup": {
                     "Type": "AWS::Logs::LogGroup",
                     "Properties": {
-                      "LogGroupName": "/aws/lambda/RestAPITest-dev-getUserById"
+                      "LogGroupName": "/aws/lambda/RestAPITest-dev-get_user_by_id"
                     }
                   },
                   "IamRoleLambdaExecution": {
@@ -1248,7 +1248,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
                       "Handler": "wsgi_handler.handler",
                       "Runtime": "python3.12",
@@ -1271,18 +1271,18 @@
                       "ApiLogGroup"
                     ]
                   },
-                  "CreateUserLambdaFunction": {
+                  "CreateUnderscoreuserLambdaFunction": {
                     "Type": "AWS::Lambda::Function",
                     "Properties": {
                       "Code": {
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
-                      "Handler": "handler.createUser",
+                      "Handler": "handler.create_user",
                       "Runtime": "python3.12",
-                      "FunctionName": "RestAPITest-dev-createUser",
+                      "FunctionName": "RestAPITest-dev-create_user",
                       "MemorySize": 1024,
                       "Timeout": 6,
                       "Environment": {
@@ -1298,21 +1298,21 @@
                       }
                     },
                     "DependsOn": [
-                      "CreateUserLogGroup"
+                      "CreateUnderscoreuserLogGroup"
                     ]
                   },
-                  "GetUserByIdLambdaFunction": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction": {
                     "Type": "AWS::Lambda::Function",
                     "Properties": {
                       "Code": {
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
-                      "Handler": "handler.getUserById",
+                      "Handler": "handler.get_user_by_id",
                       "Runtime": "python3.12",
-                      "FunctionName": "RestAPITest-dev-getUserById",
+                      "FunctionName": "RestAPITest-dev-get_user_by_id",
                       "MemorySize": 1024,
                       "Timeout": 6,
                       "Environment": {
@@ -1328,37 +1328,37 @@
                       }
                     },
                     "DependsOn": [
-                      "GetUserByIdLogGroup"
+                      "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup"
                     ]
                   },
-                  "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ": {
+                  "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "ApiLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
-                  "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0": {
+                  "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
-                        "Ref": "CreateUserLambdaFunction"
+                        "Ref": "CreateUnderscoreuserLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
-                  "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
-                        "Ref": "GetUserByIdLambdaFunction"
+                        "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -1541,7 +1541,7 @@
                               ":lambda:path/2015-03-31/functions/",
                               {
                                 "Fn::GetAtt": [
-                                  "CreateUserLambdaFunction",
+                                  "CreateUnderscoreuserLambdaFunction",
                                   "Arn"
                                 ]
                               },
@@ -1553,7 +1553,7 @@
                       "MethodResponses": []
                     },
                     "DependsOn": [
-                      "CreateUserLambdaPermissionApiGateway"
+                      "CreateUnderscoreuserLambdaPermissionApiGateway"
                     ]
                   },
                   "ApiGatewayMethodUserIdVarGet": {
@@ -1587,7 +1587,7 @@
                               ":lambda:path/2015-03-31/functions/",
                               {
                                 "Fn::GetAtt": [
-                                  "GetUserByIdLambdaFunction",
+                                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                                   "Arn"
                                 ]
                               },
@@ -1599,10 +1599,10 @@
                       "MethodResponses": []
                     },
                     "DependsOn": [
-                      "GetUserByIdLambdaPermissionApiGateway"
+                      "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1723201986679": {
+                  "ApiGatewayDeployment1723458008593": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -1654,12 +1654,12 @@
                       }
                     }
                   },
-                  "CreateUserLambdaPermissionApiGateway": {
+                  "CreateUnderscoreuserLambdaPermissionApiGateway": {
                     "Type": "AWS::Lambda::Permission",
                     "Properties": {
                       "FunctionName": {
                         "Fn::GetAtt": [
-                          "CreateUserLambdaFunction",
+                          "CreateUnderscoreuserLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -1691,12 +1691,12 @@
                       }
                     }
                   },
-                  "GetUserByIdLambdaPermissionApiGateway": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway": {
                     "Type": "AWS::Lambda::Permission",
                     "Properties": {
                       "FunctionName": {
                         "Fn::GetAtt": [
-                          "GetUserByIdLambdaFunction",
+                          "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -1763,28 +1763,28 @@
                   "ApiLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                      "Ref": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
                     },
                     "Export": {
                       "Name": "sls-RestAPITest-dev-ApiLambdaFunctionQualifiedArn"
                     }
                   },
-                  "CreateUserLambdaFunctionQualifiedArn": {
+                  "CreateUnderscoreuserLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                      "Ref": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
                     },
                     "Export": {
-                      "Name": "sls-RestAPITest-dev-CreateUserLambdaFunctionQualifiedArn"
+                      "Name": "sls-RestAPITest-dev-CreateUnderscoreuserLambdaFunctionQualifiedArn"
                     }
                   },
-                  "GetUserByIdLambdaFunctionQualifiedArn": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                      "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
                     },
                     "Export": {
-                      "Name": "sls-RestAPITest-dev-GetUserByIdLambdaFunctionQualifiedArn"
+                      "Name": "sls-RestAPITest-dev-GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn"
                     }
                   },
                   "ServiceEndpoint": {
@@ -1924,10 +1924,10 @@
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                "versionLogicalId": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
               },
-              "createUser": {
-                "handler": "handler.createUser",
+              "create_user": {
+                "handler": "handler.create_user",
                 "events": [
                   {
                     "http": {
@@ -1937,16 +1937,16 @@
                     }
                   }
                 ],
-                "name": "RestAPITest-dev-createUser",
+                "name": "RestAPITest-dev-create_user",
                 "package": {},
                 "memory": 1024,
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                "versionLogicalId": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
               },
-              "getUserById": {
-                "handler": "handler.getUserById",
+              "get_user_by_id": {
+                "handler": "handler.get_user_by_id",
                 "events": [
                   {
                     "http": {
@@ -1956,13 +1956,13 @@
                     }
                   }
                 ],
-                "name": "RestAPITest-dev-getUserById",
+                "name": "RestAPITest-dev-get_user_by_id",
                 "package": {},
                 "memory": 1024,
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                "versionLogicalId": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
               }
             },
             "resources": {
@@ -2141,16 +2141,16 @@
                       "LogGroupName": "/aws/lambda/RestAPITest-dev-api"
                     }
                   },
-                  "CreateUserLogGroup": {
+                  "CreateUnderscoreuserLogGroup": {
                     "Type": "AWS::Logs::LogGroup",
                     "Properties": {
-                      "LogGroupName": "/aws/lambda/RestAPITest-dev-createUser"
+                      "LogGroupName": "/aws/lambda/RestAPITest-dev-create_user"
                     }
                   },
-                  "GetUserByIdLogGroup": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup": {
                     "Type": "AWS::Logs::LogGroup",
                     "Properties": {
-                      "LogGroupName": "/aws/lambda/RestAPITest-dev-getUserById"
+                      "LogGroupName": "/aws/lambda/RestAPITest-dev-get_user_by_id"
                     }
                   },
                   "IamRoleLambdaExecution": {
@@ -2250,7 +2250,7 @@
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
                       "Handler": "wsgi_handler.handler",
                       "Runtime": "python3.12",
@@ -2273,18 +2273,18 @@
                       "ApiLogGroup"
                     ]
                   },
-                  "CreateUserLambdaFunction": {
+                  "CreateUnderscoreuserLambdaFunction": {
                     "Type": "AWS::Lambda::Function",
                     "Properties": {
                       "Code": {
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
-                      "Handler": "handler.createUser",
+                      "Handler": "handler.create_user",
                       "Runtime": "python3.12",
-                      "FunctionName": "RestAPITest-dev-createUser",
+                      "FunctionName": "RestAPITest-dev-create_user",
                       "MemorySize": 1024,
                       "Timeout": 6,
                       "Environment": {
@@ -2300,21 +2300,21 @@
                       }
                     },
                     "DependsOn": [
-                      "CreateUserLogGroup"
+                      "CreateUnderscoreuserLogGroup"
                     ]
                   },
-                  "GetUserByIdLambdaFunction": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction": {
                     "Type": "AWS::Lambda::Function",
                     "Properties": {
                       "Code": {
                         "S3Bucket": {
                           "Ref": "ServerlessDeploymentBucket"
                         },
-                        "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                        "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                       },
-                      "Handler": "handler.getUserById",
+                      "Handler": "handler.get_user_by_id",
                       "Runtime": "python3.12",
-                      "FunctionName": "RestAPITest-dev-getUserById",
+                      "FunctionName": "RestAPITest-dev-get_user_by_id",
                       "MemorySize": 1024,
                       "Timeout": 6,
                       "Environment": {
@@ -2330,37 +2330,37 @@
                       }
                     },
                     "DependsOn": [
-                      "GetUserByIdLogGroup"
+                      "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup"
                     ]
                   },
-                  "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ": {
+                  "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
                         "Ref": "ApiLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
-                  "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0": {
+                  "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
-                        "Ref": "CreateUserLambdaFunction"
+                        "Ref": "CreateUnderscoreuserLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
-                  "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk": {
                     "Type": "AWS::Lambda::Version",
                     "DeletionPolicy": "Retain",
                     "Properties": {
                       "FunctionName": {
-                        "Ref": "GetUserByIdLambdaFunction"
+                        "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction"
                       },
-                      "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                      "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
                     }
                   },
                   "ApiGatewayRestApi": {
@@ -2543,7 +2543,7 @@
                               ":lambda:path/2015-03-31/functions/",
                               {
                                 "Fn::GetAtt": [
-                                  "CreateUserLambdaFunction",
+                                  "CreateUnderscoreuserLambdaFunction",
                                   "Arn"
                                 ]
                               },
@@ -2555,7 +2555,7 @@
                       "MethodResponses": []
                     },
                     "DependsOn": [
-                      "CreateUserLambdaPermissionApiGateway"
+                      "CreateUnderscoreuserLambdaPermissionApiGateway"
                     ]
                   },
                   "ApiGatewayMethodUserIdVarGet": {
@@ -2589,7 +2589,7 @@
                               ":lambda:path/2015-03-31/functions/",
                               {
                                 "Fn::GetAtt": [
-                                  "GetUserByIdLambdaFunction",
+                                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                                   "Arn"
                                 ]
                               },
@@ -2601,10 +2601,10 @@
                       "MethodResponses": []
                     },
                     "DependsOn": [
-                      "GetUserByIdLambdaPermissionApiGateway"
+                      "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway"
                     ]
                   },
-                  "ApiGatewayDeployment1723201986679": {
+                  "ApiGatewayDeployment1723458008593": {
                     "Type": "AWS::ApiGateway::Deployment",
                     "Properties": {
                       "RestApiId": {
@@ -2656,12 +2656,12 @@
                       }
                     }
                   },
-                  "CreateUserLambdaPermissionApiGateway": {
+                  "CreateUnderscoreuserLambdaPermissionApiGateway": {
                     "Type": "AWS::Lambda::Permission",
                     "Properties": {
                       "FunctionName": {
                         "Fn::GetAtt": [
-                          "CreateUserLambdaFunction",
+                          "CreateUnderscoreuserLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -2693,12 +2693,12 @@
                       }
                     }
                   },
-                  "GetUserByIdLambdaPermissionApiGateway": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway": {
                     "Type": "AWS::Lambda::Permission",
                     "Properties": {
                       "FunctionName": {
                         "Fn::GetAtt": [
-                          "GetUserByIdLambdaFunction",
+                          "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                           "Arn"
                         ]
                       },
@@ -2765,28 +2765,28 @@
                   "ApiLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                      "Ref": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
                     },
                     "Export": {
                       "Name": "sls-RestAPITest-dev-ApiLambdaFunctionQualifiedArn"
                     }
                   },
-                  "CreateUserLambdaFunctionQualifiedArn": {
+                  "CreateUnderscoreuserLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                      "Ref": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
                     },
                     "Export": {
-                      "Name": "sls-RestAPITest-dev-CreateUserLambdaFunctionQualifiedArn"
+                      "Name": "sls-RestAPITest-dev-CreateUnderscoreuserLambdaFunctionQualifiedArn"
                     }
                   },
-                  "GetUserByIdLambdaFunctionQualifiedArn": {
+                  "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn": {
                     "Description": "Current Lambda function version",
                     "Value": {
-                      "Ref": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                      "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
                     },
                     "Export": {
-                      "Name": "sls-RestAPITest-dev-GetUserByIdLambdaFunctionQualifiedArn"
+                      "Name": "sls-RestAPITest-dev-GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn"
                     }
                   },
                   "ServiceEndpoint": {
@@ -2926,10 +2926,10 @@
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                "versionLogicalId": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
               },
-              "createUser": {
-                "handler": "handler.createUser",
+              "create_user": {
+                "handler": "handler.create_user",
                 "events": [
                   {
                     "http": {
@@ -2939,16 +2939,16 @@
                     }
                   }
                 ],
-                "name": "RestAPITest-dev-createUser",
+                "name": "RestAPITest-dev-create_user",
                 "package": {},
                 "memory": 1024,
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                "versionLogicalId": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
               },
-              "getUserById": {
-                "handler": "handler.getUserById",
+              "get_user_by_id": {
+                "handler": "handler.get_user_by_id",
                 "events": [
                   {
                     "http": {
@@ -2958,13 +2958,13 @@
                     }
                   }
                 ],
-                "name": "RestAPITest-dev-getUserById",
+                "name": "RestAPITest-dev-get_user_by_id",
                 "package": {},
                 "memory": 1024,
                 "timeout": 6,
                 "runtime": "python3.12",
                 "vpc": {},
-                "versionLogicalId": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                "versionLogicalId": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
               }
             },
             "resources": {
@@ -3144,16 +3144,16 @@
                 "LogGroupName": "/aws/lambda/RestAPITest-dev-api"
               }
             },
-            "CreateUserLogGroup": {
+            "CreateUnderscoreuserLogGroup": {
               "Type": "AWS::Logs::LogGroup",
               "Properties": {
-                "LogGroupName": "/aws/lambda/RestAPITest-dev-createUser"
+                "LogGroupName": "/aws/lambda/RestAPITest-dev-create_user"
               }
             },
-            "GetUserByIdLogGroup": {
+            "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup": {
               "Type": "AWS::Logs::LogGroup",
               "Properties": {
-                "LogGroupName": "/aws/lambda/RestAPITest-dev-getUserById"
+                "LogGroupName": "/aws/lambda/RestAPITest-dev-get_user_by_id"
               }
             },
             "IamRoleLambdaExecution": {
@@ -3253,7 +3253,7 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                  "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                 },
                 "Handler": "wsgi_handler.handler",
                 "Runtime": "python3.12",
@@ -3276,18 +3276,18 @@
                 "ApiLogGroup"
               ]
             },
-            "CreateUserLambdaFunction": {
+            "CreateUnderscoreuserLambdaFunction": {
               "Type": "AWS::Lambda::Function",
               "Properties": {
                 "Code": {
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                  "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                 },
-                "Handler": "handler.createUser",
+                "Handler": "handler.create_user",
                 "Runtime": "python3.12",
-                "FunctionName": "RestAPITest-dev-createUser",
+                "FunctionName": "RestAPITest-dev-create_user",
                 "MemorySize": 1024,
                 "Timeout": 6,
                 "Environment": {
@@ -3303,21 +3303,21 @@
                 }
               },
               "DependsOn": [
-                "CreateUserLogGroup"
+                "CreateUnderscoreuserLogGroup"
               ]
             },
-            "GetUserByIdLambdaFunction": {
+            "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction": {
               "Type": "AWS::Lambda::Function",
               "Properties": {
                 "Code": {
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/RestAPITest/dev/1723201997964-2024-08-09T11:13:17.964Z/RestAPITest.zip"
+                  "S3Key": "serverless/RestAPITest/dev/1723458020341-2024-08-12T10:20:20.341Z/RestAPITest.zip"
                 },
-                "Handler": "handler.getUserById",
+                "Handler": "handler.get_user_by_id",
                 "Runtime": "python3.12",
-                "FunctionName": "RestAPITest-dev-getUserById",
+                "FunctionName": "RestAPITest-dev-get_user_by_id",
                 "MemorySize": 1024,
                 "Timeout": 6,
                 "Environment": {
@@ -3333,37 +3333,37 @@
                 }
               },
               "DependsOn": [
-                "GetUserByIdLogGroup"
+                "GetUnderscoreuserUnderscorebyUnderscoreidLogGroup"
               ]
             },
-            "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ": {
+            "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "ApiLambdaFunction"
                 },
-                "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
               }
             },
-            "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0": {
+            "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
-                  "Ref": "CreateUserLambdaFunction"
+                  "Ref": "CreateUnderscoreuserLambdaFunction"
                 },
-                "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
               }
             },
-            "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI": {
+            "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
-                  "Ref": "GetUserByIdLambdaFunction"
+                  "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction"
                 },
-                "CodeSha256": "QnSFCTjw0jeLILji+Tdiza56GLmSojFJ9piUbj4EhMc="
+                "CodeSha256": "0XV0iO15v5gtRkcaTSPkhCmJqUPbHNZLm/COSNxMHpI="
               }
             },
             "ApiGatewayRestApi": {
@@ -3546,7 +3546,7 @@
                         ":lambda:path/2015-03-31/functions/",
                         {
                           "Fn::GetAtt": [
-                            "CreateUserLambdaFunction",
+                            "CreateUnderscoreuserLambdaFunction",
                             "Arn"
                           ]
                         },
@@ -3558,7 +3558,7 @@
                 "MethodResponses": []
               },
               "DependsOn": [
-                "CreateUserLambdaPermissionApiGateway"
+                "CreateUnderscoreuserLambdaPermissionApiGateway"
               ]
             },
             "ApiGatewayMethodUserIdVarGet": {
@@ -3592,7 +3592,7 @@
                         ":lambda:path/2015-03-31/functions/",
                         {
                           "Fn::GetAtt": [
-                            "GetUserByIdLambdaFunction",
+                            "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                             "Arn"
                           ]
                         },
@@ -3604,10 +3604,10 @@
                 "MethodResponses": []
               },
               "DependsOn": [
-                "GetUserByIdLambdaPermissionApiGateway"
+                "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1723201986679": {
+            "ApiGatewayDeployment1723458008593": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -3659,12 +3659,12 @@
                 }
               }
             },
-            "CreateUserLambdaPermissionApiGateway": {
+            "CreateUnderscoreuserLambdaPermissionApiGateway": {
               "Type": "AWS::Lambda::Permission",
               "Properties": {
                 "FunctionName": {
                   "Fn::GetAtt": [
-                    "CreateUserLambdaFunction",
+                    "CreateUnderscoreuserLambdaFunction",
                     "Arn"
                   ]
                 },
@@ -3696,12 +3696,12 @@
                 }
               }
             },
-            "GetUserByIdLambdaPermissionApiGateway": {
+            "GetUnderscoreuserUnderscorebyUnderscoreidLambdaPermissionApiGateway": {
               "Type": "AWS::Lambda::Permission",
               "Properties": {
                 "FunctionName": {
                   "Fn::GetAtt": [
-                    "GetUserByIdLambdaFunction",
+                    "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunction",
                     "Arn"
                   ]
                 },
@@ -3768,28 +3768,28 @@
             "ApiLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+                "Ref": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
               },
               "Export": {
                 "Name": "sls-RestAPITest-dev-ApiLambdaFunctionQualifiedArn"
               }
             },
-            "CreateUserLambdaFunctionQualifiedArn": {
+            "CreateUnderscoreuserLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+                "Ref": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
               },
               "Export": {
-                "Name": "sls-RestAPITest-dev-CreateUserLambdaFunctionQualifiedArn"
+                "Name": "sls-RestAPITest-dev-CreateUnderscoreuserLambdaFunctionQualifiedArn"
               }
             },
-            "GetUserByIdLambdaFunctionQualifiedArn": {
+            "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+                "Ref": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
               },
               "Export": {
-                "Name": "sls-RestAPITest-dev-GetUserByIdLambdaFunctionQualifiedArn"
+                "Name": "sls-RestAPITest-dev-GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn"
               }
             },
             "ServiceEndpoint": {
@@ -3929,10 +3929,10 @@
           "timeout": 6,
           "runtime": "python3.12",
           "vpc": {},
-          "versionLogicalId": "ApiLambdaVersion6uTLTgI4wNsXMPDZVOz75g2c8wh0Ysc1BEdWrXzaQ"
+          "versionLogicalId": "ApiLambdaVersionV7JEFzco5UGblSlLrZTGgxSY5zRVaRXq4WN0G1rsA"
         },
-        "createUser": {
-          "handler": "handler.createUser",
+        "create_user": {
+          "handler": "handler.create_user",
           "events": [
             {
               "http": {
@@ -3942,16 +3942,16 @@
               }
             }
           ],
-          "name": "RestAPITest-dev-createUser",
+          "name": "RestAPITest-dev-create_user",
           "package": {},
           "memory": 1024,
           "timeout": 6,
           "runtime": "python3.12",
           "vpc": {},
-          "versionLogicalId": "CreateUserLambdaVersion5nPrmqzOhKiBGwEGkCgGB4GUAvKsPBCQZfeyKZakNq0"
+          "versionLogicalId": "CreateUnderscoreuserLambdaVersionUbsMjRQBtYAADFDEvESw2lmOrNjp9pGxIhvPYgKxA"
         },
-        "getUserById": {
-          "handler": "handler.getUserById",
+        "get_user_by_id": {
+          "handler": "handler.get_user_by_id",
           "events": [
             {
               "http": {
@@ -3961,13 +3961,13 @@
               }
             }
           ],
-          "name": "RestAPITest-dev-getUserById",
+          "name": "RestAPITest-dev-get_user_by_id",
           "package": {},
           "memory": 1024,
           "timeout": 6,
           "runtime": "python3.12",
           "vpc": {},
-          "versionLogicalId": "GetUserByIdLambdaVersionx1DrQetRUwG3vIEF3ZoO65t4ApxKxIlUiuRJvBennbI"
+          "versionLogicalId": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaVersioneMFMY720bORiLVxhkp4F1TbJl4nFw1Qr2jVCGGq5xk"
         }
       },
       "resources": {
@@ -3998,7 +3998,7 @@
         "Outputs": {}
       }
     },
-    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: organizationl\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: restapitest\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: RestAPITest\n\nstages:\n  default:\n    params:\n      tableName: \"users-table-${sls:stage}\"\n\nplugins:\n  - serverless-wsgi\n  - serverless-python-requirements\n\ncustom:\n  wsgi:\n    app: app.app\n  tableName: \"UsersTable\"\n\nprovider:\n  name: aws\n  runtime: python3.12\n  region: us-east-1\n  iam:\n    role:\n      statements:\n        - Effect: Allow\n          Action:\n            - dynamodb:Query\n            - dynamodb:Scan\n            - dynamodb:GetItem\n            - dynamodb:PutItem\n            - dynamodb:UpdateItem\n            - dynamodb:DeleteItem\n          Resource:\n            - arn:aws:dynamodb:${self:provider.region}:*:table/UsersTable\n  environment:\n    USERS_TABLE: ${self:custom.tableName}\n\nfunctions:\n  api:\n    handler: wsgi_handler.handler\n    events:\n      - http:\n          path: /\n          method: ANY\n      - http:\n          path: /{proxy+}\n          method: ANY\n  createUser:\n    handler: handler.createUser\n    events:\n      - http:\n          path: user\n          method: post\n  getUserById:\n    handler: handler.getUserById\n    events:\n      - http:\n          path: user/{id}\n          method: get\nresources:\n  Resources:\n    UsersTable:\n      Type: AWS::DynamoDB::Table\n      Properties:\n        TableName: ${self:custom.tableName}\n        AttributeDefinitions:\n          - AttributeName: id\n            AttributeType: S\n        KeySchema:\n          - AttributeName: id\n            KeyType: HASH\n        ProvisionedThroughput:\n          ReadCapacityUnits: 1\n          WriteCapacityUnits: 1\n\n",
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: organizationl\n\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: restapitest\n\n# \"service\" is the name of this project. This will also be added to your AWS resource names.\nservice: RestAPITest\n\n# Define stages and parameters used across the configuration.\nstages:\n  default:\n    params:\n      tableName: \"users-table-${sls:stage}\"\n\n# Plugins used in this project.\nplugins:\n  - serverless-wsgi       # Plugin to handle WSGI applications like Flask\n  - serverless-python-requirements  # Plugin to package Python dependencies\n\n# Custom variables used throughout the configuration.\ncustom:\n  wsgi:\n    app: app.app  # Entry point of the Flask app\n  tableName: \"UsersTable\"  # Name of the DynamoDB table\n\n# Provider configuration for AWS.\nprovider:\n  name: aws  # The cloud provider, AWS in this case\n  runtime: python3.12  # The Python runtime version\n  region: us-east-1  # AWS region where the resources will be deployed\n\n  # IAM role permissions for the Lambda functions.\n  iam:\n    role:\n      statements:\n        - Effect: Allow\n          Action:  # DynamoDB actions allowed for the Lambda functions\n            - dynamodb:Query\n            - dynamodb:Scan\n            - dynamodb:GetItem\n            - dynamodb:PutItem\n            - dynamodb:UpdateItem\n            - dynamodb:DeleteItem\n          Resource:\n            - arn:aws:dynamodb:${self:provider.region}:*:table/UsersTable  # Resource ARN for the DynamoDB table\n\n  # Environment variables for Lambda functions.\n  environment:\n    USERS_TABLE: ${self:custom.tableName}  # Environment variable for the DynamoDB table name\n\n# Functions to be deployed as AWS Lambda.\nfunctions:\n  api:\n    handler: wsgi_handler.handler  # Handler for the Flask app\n    events:\n      - http:\n          path: /   # API Gateway event for the root path\n          method: ANY  # Allow any HTTP method\n      - http:\n          path: /{proxy+}  # API Gateway event for any subpath\n          method: ANY  # Allow any HTTP method\n\n  create_user:\n    handler: handler.create_user  # Handler for creating a user in DynamoDB\n    events:\n      - http:\n          path: user  # API Gateway event for creating a user\n          method: post  # POST method for this endpoint\n\n  get_user_by_id:\n    handler: handler.get_user_by_id  # Handler for retrieving a user by ID from DynamoDB\n    events:\n      - http:\n          path: user/{id}  # API Gateway event for retrieving a user by ID\n          method: get  # GET method for this endpoint\n\n# Resources to be created, including the DynamoDB table.\nresources:\n  Resources:\n    UsersTable:\n      Type: AWS::DynamoDB::Table  # AWS resource type\n      Properties:\n        TableName: ${self:custom.tableName}  # Name of the DynamoDB table\n        AttributeDefinitions:\n          - AttributeName: id  # Attribute for the primary key\n            AttributeType: S  # String type for the primary key\n        KeySchema:\n          - AttributeName: id  # Primary key schema\n            KeyType: HASH  # Hash key (partition key) type\n        ProvisionedThroughput:\n          ReadCapacityUnits: 1  # Read capacity for the table\n          WriteCapacityUnits: 1  # Write capacity for the table\n",
     "command": [
       "deploy"
     ],
@@ -4034,31 +4034,31 @@
     "userEmail": "lorenzo.abatescianni@gmail.com",
     "serviceProviderAwsCredentials": "<REDACTED>",
     "serviceProviderAwsAccountId": "850995548793",
-    "versionSf": "4.1.20",
+    "versionSf": "4.1.21",
     "serviceProviderAwsCfStackName": "RestAPITest-dev",
     "integrations": {},
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:850995548793:stack/RestAPITest-dev/de4f5e10-563a-11ef-a2c5-1200cf5eb61d",
     "serviceProviderAwsCfStackCreated": "2024-08-09T10:33:51.040Z",
-    "serviceProviderAwsCfStackUpdated": "2024-08-09T11:11:39.431Z",
+    "serviceProviderAwsCfStackUpdated": "2024-08-12T10:18:35.555Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
+        "OutputKey": "CreateUnderscoreuserLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:850995548793:function:RestAPITest-dev-create_user:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-RestAPITest-dev-CreateUnderscoreuserLambdaFunctionQualifiedArn"
+      },
+      {
         "OutputKey": "ApiLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:850995548793:function:RestAPITest-dev-api:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:850995548793:function:RestAPITest-dev-api:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-RestAPITest-dev-ApiLambdaFunctionQualifiedArn"
       },
       {
-        "OutputKey": "CreateUserLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:850995548793:function:RestAPITest-dev-createUser:2",
+        "OutputKey": "GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:850995548793:function:RestAPITest-dev-get_user_by_id:1",
         "Description": "Current Lambda function version",
-        "ExportName": "sls-RestAPITest-dev-CreateUserLambdaFunctionQualifiedArn"
-      },
-      {
-        "OutputKey": "GetUserByIdLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:850995548793:function:RestAPITest-dev-getUserById:2",
-        "Description": "Current Lambda function version",
-        "ExportName": "sls-RestAPITest-dev-GetUserByIdLambdaFunctionQualifiedArn"
+        "ExportName": "sls-RestAPITest-dev-GetUnderscoreuserUnderscorebyUnderscoreidLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "ServiceEndpoint",
